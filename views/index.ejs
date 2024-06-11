@@ -12,19 +12,37 @@
     </header>
     <div class="container">
       <section id="blog">
-        <% if (locals.data) { %>
-        <h1><%= title %></h1>
-        <p><%= content %></p>
-        <% } else { %>
-        <h1>No Content Yet</h1>
-        <% } %>
+        <div class="blogpost">
+          <% if (locals.data) { %>
+          <h1><%= data[0].title %></h1>
+          <p><%= data[0].content %></p>
+          <% } else { %>
+          <h1>No Content Yet</h1>
+          <% } %>
+        </div>
 
         <form class="form" action="/submit-blog" method="post">
           <label for="title">Post title</label>
-          <input type="text" name="title" id="post-title" />
+          <input
+            type="text"
+            name="title"
+            id="post-title"
+            placeholder="Title here"
+            maxlength="50"
+            required
+          />
           <label for="content">Post content</label>
-          <input type="text" name="content" id="post-content" />
-          <button class="button" type="submit">POST</button>
+          <textarea
+            name="content"
+            id="post-content"
+            placeholder="Write something..."
+            maxlength="1000"
+            required
+          ></textarea>
+          <div class="button-area">
+            <button class="button" type="submit">POST</button>
+            <button class="button" type="reset">RESET</button>
+          </div>
         </form>
       </section>
       <section id="about">

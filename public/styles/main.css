@@ -37,25 +37,72 @@ header {
   margin-bottom: 2rem;
 }
 
+#blog .blogpost {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(83, 0, 160, 0.308);
+  backdrop-filter: blur(5px);
+}
+::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+}
 #blog form {
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
   padding: 20px;
-  background-color: rgba(83, 0, 160, 0.308);
-  backdrop-filter: blur(10px);
+  background-color: #5300a04f;
+  backdrop-filter: blur(5px);
 }
 
+#blog input,
+textarea {
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  transition: border 0.1s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#blog input:focus,
+textarea:focus {
+  border: 3px solid #15f5ba;
+}
 #blog input {
   margin-bottom: 1rem;
 }
-
-#blog button {
+#blog textarea {
+  height: 120px;
+  margin-bottom: 1rem;
+}
+#blog .button-area {
+  display: flex;
   align-self: center;
-  width: fit-content;
+  gap: 1rem;
+}
+#blog button {
+  background-color: #15f5ba;
+  color: black;
+  padding: 5px 20px;
+  border-style: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#blog button[type="reset"] {
+  background: none;
+  color: whitesmoke;
+  border: 2px solid #5300a0;
 }
 
 #about {
   width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #5300a04f;
+  backdrop-filter: blur(5px);
 }
 #about img {
   width: 100%;
