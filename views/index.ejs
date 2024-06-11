@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hello world</h1>
+    </header>
+    <div class="container">
+      <section id="blog">
+        <% if (locals.data) { %>
+        <h1><%= title %></h1>
+        <p><%= content %></p>
+        <% } else { %>
+        <h1>No Content Yet</h1>
+        <% } %>
+
+        <form class="form" action="/submit-blog" method="post">
+          <label for="title">Post title</label>
+          <input type="text" name="title" id="post-title" />
+          <label for="content">Post content</label>
+          <input type="text" name="content" id="post-content" />
+          <button class="button" type="submit">POST</button>
+        </form>
+      </section>
+      <section id="about">
+        <h1>About</h1>
+        <img
+          src="images/hand-drawn-design-people-avatars-set.png"
+          alt="illustration upfront of person"
+        />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+          incidunt aperiam modi? Tempore reprehenderit minima alias. Libero quas
+          dolorum rem ipsam, itaque, amet, esse sapiente quo voluptate aut
+          dolore accusamus?Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Molestiae earum vitae similique soluta maxime ipsam ducimus,
+          modi nisi illo perspiciatis deleniti qui labore ex vel obcaecati dicta
+          recusandae blanditiis tenetur.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
