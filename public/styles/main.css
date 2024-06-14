@@ -11,6 +11,7 @@ body {
   background-size: cover;
   background-position: center;
   color: whitesmoke;
+  margin-bottom: 3rem;
 }
 header {
   padding: 2rem 0;
@@ -29,13 +30,14 @@ header {
   width: 60%;
 }
 
-#blog h1 {
+#blog h1,
+p {
   margin-bottom: 1rem;
 }
 
-#blog p {
+/* #blog p {
   margin-bottom: 2rem;
-}
+} */
 
 #blog .blogpost {
   margin-bottom: 2rem;
