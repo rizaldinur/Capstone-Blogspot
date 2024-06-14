@@ -12,15 +12,33 @@
     </header>
     <div class="container">
       <section id="blog">
-        <div class="blogpost">
-          <% if (locals.data) { %>
-          <h1><%= data[0].title %></h1>
-          <p><%= data[0].content %></p>
-          <% } else { %>
-          <h1>No Content Yet</h1>
-          <% } %>
+        <% if (locals.blog) { %> <% blog.forEach((post,index)=> { %>
+        <div id="blog<%= index %>" class="blogpost">
+          <h1><%= post.title %></h1>
+          <p><%= post.content %></p>
+          <form class="button-area" method="post">
+            <button
+              class="button btn-primary"
+              type="submit"
+              formaction="/update-blog"
+            >
+              PUT
+            </button>
+            <button
+              id="btn-del"
+              class="button btn-danger"
+              type="submit"
+              formaction="/delete"
+            >
+              DELETE
+            </button>
+          </form>
         </div>
-
+        <% }); %> <%} else { %>
+        <div class="blogpost">
+          <h1>No Content Yet</h1>
+        </div>
+        <% } %>
         <form class="form" action="/submit-blog" method="post">
           <label for="title">Post title</label>
           <input
@@ -40,8 +58,8 @@
             required
           ></textarea>
           <div class="button-area">
-            <button class="button" type="submit">POST</button>
-            <button class="button" type="reset">RESET</button>
+            <button class="button btn-primary" type="submit">POST</button>
+            <button class="button btn-danger" type="reset">RESET</button>
           </div>
         </form>
       </section>
@@ -62,5 +80,6 @@
         </p>
       </section>
     </div>
+    <script src="../index.js"></script>
   </body>
 </html>
