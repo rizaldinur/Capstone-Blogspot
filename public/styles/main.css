@@ -44,7 +44,7 @@ p {
 ::placeholder {
   font-family: Arial, Helvetica, sans-serif;
 }
-#blog .form {
+.form {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -77,7 +77,30 @@ p {
   border-radius: 5px;
 }
 
-#blog input,
+#overlay-put .box-overlay {
+  position: relative;
+  width: 60%;
+}
+
+#overlay-put .form {
+  margin: 0;
+}
+
+#overlay-put h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
 textarea {
   outline: none;
   padding: 10px;
@@ -85,19 +108,18 @@ textarea {
   border: none;
   transition: border 0.1s;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
 }
 
-#blog input:focus,
+input:focus,
 textarea:focus {
   border: 3px solid #15f5ba;
 }
-#blog input {
-  margin-bottom: 1rem;
-}
-#blog textarea {
+
+textarea {
   height: 120px;
-  margin-bottom: 1rem;
 }
+
 .button-area {
   /* width: 70%; */
   display: flex;

@@ -17,7 +17,9 @@
           <h1><%= post.title %></h1>
           <p><%= post.content %></p>
           <div class="button-area">
-            <button class="button btn-primary btn-put">PUT</button>
+            <button class="button btn-primary btn-put" value="<%= index %>">
+              PUT
+            </button>
             <button class="button btn-danger btn-del" value="<%= index %>">
               DELETE
             </button>
@@ -75,6 +77,48 @@
       </div>
 
       <!-- update put function here -->
+      <div id="overlay-put" class="overlay">
+        <div class="box-overlay">
+          <h2>Update Post</h2>
+          <form class="form" action="/update-blog" method="post">
+            <label for="title">Post title</label>
+            <input
+              type="text"
+              name="title"
+              id="post-title"
+              placeholder="Title here"
+              maxlength="50"
+              required
+            />
+            <label for="content">Post content</label>
+            <textarea
+              name="content"
+              id="post-content"
+              placeholder="Write something..."
+              maxlength="1000"
+              required
+            ></textarea>
+            <div class="button-area">
+              <button
+                id="btn-put"
+                class="button btn-primary"
+                name="btnPut"
+                type="submit"
+              >
+                PUT
+              </button>
+              <button class="button btn-danger" type="reset">RESET</button>
+            </div>
+          </form>
+          <button id="close-btn">
+            <img
+              src="images/close_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+              alt="close overlay button with x shape"
+            />
+          </button>
+        </div>
+      </div>
+
       <section id="about">
         <h1>About</h1>
         <img

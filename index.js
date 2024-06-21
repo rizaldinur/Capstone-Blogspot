@@ -29,7 +29,15 @@ app.post("/submit-blog", (req, res) => {
   res.redirect("/");
 });
 
-app.post("/update-blog", (req, res) => {});
+app.post("/update-blog", (req, res) => {
+  const index = Number(req.body.btnPut);
+  const newdata = {};
+  newdata.title = req.body.title;
+  newdata.content = req.body.content;
+  data.splice(index, 1, newdata);
+  console.log(data);
+  res.redirect("/");
+});
 
 app.post("/delete", (req, res) => {
   const index = Number(req.body.btnDel);
