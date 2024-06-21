@@ -16,28 +16,13 @@
         <div id="blog<%= index %>" class="blogpost">
           <h1><%= post.title %></h1>
           <p><%= post.content %></p>
-          <form class="button-area" method="post">
-            <button
-              class="button btn-primary"
-              type="submit"
-              formaction="/update-blog"
-            >
-              PUT
-            </button>
-            <button
-              id="btn-del"
-              class="button btn-danger"
-              type="submit"
-              formaction="/delete"
-              name="btnDel"
-              value="<%= index %>"
-            >
+          <div class="button-area">
+            <button class="button btn-primary btn-put">PUT</button>
+            <button class="button btn-danger btn-del" value="<%= index %>">
               DELETE
             </button>
-          </form>
+          </div>
         </div>
-        <!-- update delete function here -->
-        <!-- update put function here -->
         <% }); %> <%} else { %>
         <div class="blogpost">
           <h1>No Content Yet</h1>
@@ -67,6 +52,29 @@
           </div>
         </form>
       </section>
+
+      <!-- update delete function here -->
+      <div id="overlay-del" class="overlay">
+        <div class="box-overlay">
+          <p>Are you sure?</p>
+          <form id="confirm-box" method="post"></form>
+          <div class="button-area">
+            <button
+              id="btn-delete"
+              class="button btn-danger"
+              type="submit"
+              form="confirm-box"
+              formaction="/delete"
+              name="btnDel"
+            >
+              DELETE
+            </button>
+            <button class="button btn-primary btn-cancel">CANCEL</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- update put function here -->
       <section id="about">
         <h1>About</h1>
         <img
