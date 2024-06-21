@@ -1,2 +1,4 @@
-let blog = document.getElementById("blog").innerHTML;
-console.log(blog);
+// overlay delete
+// overlay put
+// closeoverlaybtn put
+// close overlay on click outside box
