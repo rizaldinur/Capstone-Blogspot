@@ -16,11 +16,7 @@ let data = [];
 app.get("/", (req, res) => {
   // console.log(data);
 
-  if (data.length === 0) {
-    res.render("index.ejs");
-  } else {
-    res.render("index.ejs", { blog: data });
-  }
+  res.render("index.ejs", { blog: data });
 });
 
 app.post("/submit-blog", (req, res) => {
