@@ -20,7 +20,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit-blog", (req, res) => {
-  data.push(req.body);
+  const newdata = {};
+  newdata.title = req.body.title;
+  newdata.content = req.body.content;
+  newdata.date = new Date().toUTCString();
+  data.push(newdata);
   console.log(data);
   res.redirect("/");
 });
@@ -30,8 +34,9 @@ app.post("/update-blog", (req, res) => {
   const newdata = {};
   newdata.title = req.body.title;
   newdata.content = req.body.content;
+  newdata.date = new Date().toUTCString();
   data.splice(index, 1, newdata);
-  console.log(data);
+  console.log(newdata.date);
   res.redirect("/");
 });
 
@@ -43,5 +48,5 @@ app.post("/delete", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Server running on port " + port);
+  console.log(`Server running on port http://localhost:${port}`);
 });
