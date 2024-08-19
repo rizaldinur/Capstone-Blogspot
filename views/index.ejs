@@ -30,9 +30,10 @@
     </header>
     <div class="container">
       <section id="blog">
-        <% if (locals.blog) { %> <% blog.forEach((post,index)=> { %>
+        <% if (blog.length) { %> <% blog.forEach((post,index)=> { %>
         <div id="blog<%= index %>" class="blogpost">
           <h1><%= post.title %></h1>
+          <p><%= post.date %></p>
           <p><%= post.content %></p>
           <div class="button-area">
             <button class="button btn-primary btn-put" value="<%= index %>">
